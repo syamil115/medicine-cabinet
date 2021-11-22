@@ -40,7 +40,7 @@
               {{item}}
 
               <textarea name="name" rows="1" cols="30"></textarea>
-              <button v-on:click="addDrug" id="add" value={{item}} >+</button>
+              <button v-on:click="addDrug(item)" id="add">+</button>
             </li>
           </ul>
 
@@ -50,8 +50,15 @@
         <div class="col, client-medicine">
 
           <p>User's Medicine Cabinet</p>
+          <ul>
+            <li v-for="item in items2" :key="item">
 
+              {{item}}
 
+              <textarea name="name" rows="1" cols="30"></textarea>
+              <button v-on:click="removeDrug(item)" id="remove">-</button>
+            </li>
+          </ul>
         </div>
 
       </div>
@@ -60,7 +67,6 @@
     </div>
 
   </div>
-
 
   <script src="https://unpkg.com/vue@3.0.5"></script>
   <script src="app.js"></script>
