@@ -1,9 +1,5 @@
 const app = Vue.createApp({
 
-
-
-
-
   data() {
     return {
 
@@ -11,10 +7,7 @@ const app = Vue.createApp({
 
       items2: []
     }
-
-
   },
-
 
   methods: {
     searchDrug() {
@@ -33,29 +26,30 @@ const app = Vue.createApp({
       } else {
         alert("No drug found!");
       }
-
-
     },
 
 
-    addDrug() {
-      var y = document.getElementById("add").value;
-      console.log(y);
+    addDrug(item) {
+
+      this.items2.push(item);
 
     },
 
-    removeDrug() {
+    removeDrug(item) {
 
+      for( var i = 0; i < this.items2.length; i++){
 
+     if ( this.items2[i] === item) {
+
+         this.items2.splice(i, 1);
+     }
+
+ }
     }
 
 
 
-
-
-
   },
-
 
 
 })
